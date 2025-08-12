@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Днём Рождения, Ника!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="img/bn.jpg" type="img/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f8ff;
+            overflow-x: hidden;
+        }
+        
+        .title {
+            font-family: 'Pacifico', cursive;
+        }
+        
+        .comic-bubble {
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 3px solid #ff6b6b;
+        }
+        
+        .comic-bubble:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 15px 15px 0;
+            border-style: solid;
+            border-color: white transparent;
+        }
+        
+        .petal {
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 10;
+            pointer-events: none;
+            animation: falling linear forwards;
+        }
+        
+        @keyframes falling {
+            0% {
+                transform: translateY(-10px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(calc(100vh + 50px)) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .aviation-card {
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .aviation-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-blue-50 to-blue-100 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-20">
+            <div class="absolute top-10 left-10 w-16 h-16 bg-yellow-400 rounded-full"></div>
+            <div class="absolute top-1/3 right-20 w-24 h-24 bg-red-400 rounded-full"></div>
+            <div class="absolute bottom-20 left-1/4 w-20 h-20 bg-pink-400 rounded-full"></div>
+            <div class="absolute bottom-1/3 right-1/3 w-12 h-12 bg-purple-400 rounded-full"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4">
+            <h1 class="title text-5xl md:text-7xl font-bold text-blue-800 mb-6">Дорогая Ника,</h1>
+            <h2 class="title text-4xl md:text-6xl font-bold text-pink-600 mb-8">С Днём Рождения!</h2>
+            
+            <div class="comic-bubble max-w-md mx-auto mb-10">
+                <p class="text-xl font-semibold text-gray-800">19 лет - это только взлётная полоса!</p>
+            </div>
+            
+            <div class="flex flex-col items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/1047/1047711.png" alt="Авиационный значок" class="w-24 h-24 mb-8">
+                <button onclick="scrollToNext()" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transition duration-300 transform hover:scale-105">
+                    Читать далее
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-0 left-0 w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#ffffff" fill-opacity="1" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
+    
+    <!-- Congratulations Section -->
+    <section id="congratulations" class="min-h-screen py-20 px-4 bg-white relative">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center text-blue-800 mb-16">Поздравляем тебя с 19-летием!</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Left Image -->
+                <div class="flex justify-center items-center">
+                    <img src="img/bn.jpg" alt="Авиация" class="w-full h-64 object-cover rounded-xl shadow-xl aviation-card">
+                </div>
+                
+                <!-- Center Card -->
+                <div class="bg-gradient-to-br from-pink-100 to-blue-100 p-8 rounded-2xl shadow-2xl border-2 border-pink-300 relative z-10">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-6">Дорогая Ника!</h3>
+                        <p class="text-gray-700 mb-4">Поздравляю тебя с 19-летием! 🎉</p>
+                        <p class="text-gray-700 mb-4">Желаем, чтобы твой жизненный путь был таким же чётким и продуманным, как логистические схемы, которые ты изучаешь!</p>
+                        <p class="text-gray-700 mb-4">Пусть все твои мечты взлетают, как самолёты, и достигают самых высоких высот!</p>
+                        <p class="text-gray-700 mb-6">Будь счастлива, здорова и успешна во всех своих начинаниях!</p>
+                        
+                        <button onclick="createPetals()" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full text-lg shadow-lg transition duration-300 transform hover:scale-105">
+                            Сюрприз!
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Right Image -->
+                <div class="flex justify-center items-center">
+                    <img src="img/ns.jpg" alt="Логистика" class="w-full h-64 object-cover rounded-xl shadow-xl aviation-card">
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Bottom Left Image -->
+                <div class="flex justify-center items-center">
+                    <img src="img/n.jpg" alt="День рождения" class="w-full h-64 object-cover rounded-xl shadow-xl aviation-card">
+                </div>
+                
+                <!-- Bottom Right Image -->
+                <div class="flex justify-center items-center">
+                    <img src="img/bmw.jpg" alt="Комиксы" class="w-full h-64 object-cover rounded-xl shadow-xl aviation-card">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Comic elements -->
+        <div class="absolute top-10 left-10 w-24 h-24 opacity-70">
+            <img src="https://cdn-icons-png.flaticon.com/512/4392/4392528.png" alt="Комикс" class="w-full h-full">
+        </div>
+        <div class="absolute bottom-10 right-10 w-24 h-24 opacity-70">
+            <img src="https://cdn-icons-png.flaticon.com/512/4392/4392522.png" alt="Комикс" class="w-full h-full">
+        </div>
+    </section>
+    
+    <script>
+        function scrollToNext() {
+            document.getElementById('congratulations').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        function createPetals() {
+            const colors = [
+                'rgba(255, 192, 203, 0.8)', // розовый
+                'rgba(255, 105, 180, 0.8)', // ярко-розовый
+                'rgba(219, 112, 147, 0.8)', // бледно-фиолетовый
+                'rgba(255, 182, 193, 0.8)', // светлый розовый
+                'rgba(199, 21, 133, 0.8)'   // средний фиолетовый
+            ];
+            
+            const petalShapes = [
+                'M20,10 C30,5 40,5 50,10 C60,15 60,25 50,30 C40,35 30,35 20,30 C10,25 10,15 20,10 Z', // классический лепесток
+                'M20,10 C25,0 35,0 40,10 C45,20 40,30 30,30 C20,30 15,20 20,10 Z', // более округлый
+                'M10,10 C20,0 30,0 40,10 C50,20 40,30 30,30 C20,30 10,20 10,10 Z', // асимметричный
+                'M15,10 C25,5 35,5 45,10 C55,15 55,25 45,30 C35,35 25,35 15,30 C5,25 5,15 15,10 Z', // удлинённый
+                'M10,5 C20,0 30,0 40,5 C50,10 50,20 40,25 C30,30 20,30 10,25 C0,20 0,10 10,5 Z' // более изогнутый
+            ];
+            
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const petal = document.createElement('div');
+                    petal.className = 'petal';
+                    
+                    // Размер лепестка
+                    const size = Math.random() * 20 + 10;
+                    
+                    // Позиция по горизонтали
+                    const left = Math.random() * window.innerWidth;
+                    
+                    // Время падения
+                    const duration = Math.random() * 3 + 2;
+                    
+                    // Задержка начала анимации
+                    const delay = Math.random() * 5;
+                    
+                    // Цвет лепестка
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    
+                    // Форма лепестка
+                    const shape = petalShapes[Math.floor(Math.random() * petalShapes.length)];
+                    
+                    // Создаем SVG для лепестка
+                    petal.innerHTML = `
+                        <svg width="${size}" height="${size}" viewBox="0 0 60 40">
+                            <path d="${shape}" fill="${color}" />
+                        </svg>
+                    `;
+                    
+                    petal.style.left = `${left}px`;
+                    petal.style.top = `-30px`;
+                    petal.style.width = `${size}px`;
+                    petal.style.height = `${size}px`;
+                    petal.style.animationDuration = `${duration}s`;
+                    petal.style.animationDelay = `${delay}s`;
+                    
+                    document.body.appendChild(petal);
+                    
+                    // Удаляем лепесток после завершения анимации
+                    setTimeout(() => {
+                        petal.remove();
+                    }, (duration + delay) * 1000);
+                }, i * 100);
+            }
+        }
+    </script>
+</body>
+</html>
